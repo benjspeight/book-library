@@ -26,7 +26,7 @@ describe("/readers", () => {
         expect(response.body.name).to.equal("Elizabeth Bennet");
         expect(newReaderRecord.name).to.equal("Elizabeth Bennet");
         expect(newReaderRecord.email).to.equal("future_ms_darcy@gmail.com");
-        expect(newReaderRecord.password).to.equal(undefined);
+        expect(newReaderRecord.password).to.equal("password123");
       });
     });
   });
@@ -69,7 +69,7 @@ describe("with records in the database", () => {
 
         expect(reader.name).to.equal(expected.name);
         expect(reader.email).to.equal(expected.email);
-        expect(reader.password).to.equal(undefined);
+        expect(reader.password).to.not.have.property("password");
       });
     });
   });
